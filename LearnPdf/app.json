@@ -1,13 +1,27 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/post/index",
+    "pages/avatar/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/post/index",
+      "text": "静态",
+      "iconPath": "/images/tabbar/a-off.png",
+      "selectedIconPath": "/images/tabbar/a-on.png"
+    },
+    {
+      "pagePath": "pages/avatar/index",
+      "text": "其他",
+      "iconPath": "/images/tabbar/b-off.png",
+      "selectedIconPath": "/images/tabbar/b-on.png"
+    }]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
