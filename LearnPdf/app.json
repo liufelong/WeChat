@@ -1,13 +1,14 @@
 {
   "pages": [
     "pages/post/index",
+    "pages/post/static/art",
     "pages/avatar/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#FE5958",
+    "navigationBarTitleText": "学习",
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "list": [{

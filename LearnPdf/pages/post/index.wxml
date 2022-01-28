@@ -1,2 +1,6 @@
 <!--pages/post/index.wxml-->
-<text>pages/post/index.wxml</text>
+<view>
+  <navigator url="/pages/post/static/art">
+    静态页面
+  </navigator>
+</view>
