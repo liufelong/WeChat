@@ -13,7 +13,7 @@
       <text class="post-content">{{content}}</text>
       <view class="post-like">
         <image src="/images/icon/wx_app_collect.png"></image>
-        <text>{{collectionNum.array[0]}}</text>
+        <text>{{collectionNum}}</text>
 
         <image src="/images/icon/wx_app_like.png"></image>
         <text>{{readingNum}}</text>
