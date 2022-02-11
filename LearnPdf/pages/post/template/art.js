@@ -1,7 +1,11 @@
 // pages/post/template/art.js
 
 // var dataObj = require('../../../data/data.js');
+//直接引用js数据
 var dataObj = require("../../../data/data.js");
+
+//使用缓存类
+var DBPost = require('../../../data/DBPost.js').DBPost;
 
 Page({
 
@@ -16,8 +20,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    //直接引用js数据
+    // this.setData({
+    //   postList:dataObj.postList
+    // })
+
+    //使用缓存类
+    var dbPost = new DBPost();
     this.setData({
-      postList:dataObj.postList
+      postList:dbPost.getAllPostData()
     })
   },
 
