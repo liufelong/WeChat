@@ -41,6 +41,14 @@ Page({
     });
   },
 
+  onTapToDetail(event){
+    var postId = event.currentTarget.dataset.postId;
+    console.log("点击了文章"+postId);
+    wx.navigateTo({
+      url: '/pages/post/post-detail/post-detail?tempid='+postId,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
