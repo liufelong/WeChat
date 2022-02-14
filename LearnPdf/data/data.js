@@ -34,6 +34,30 @@ var postList =[
       readingNum:92,
       collectionNum:108,
       commentNum:7
+    },
+    {
+      author:{
+        date:"Sep 22 2016",
+        authorImage:"/images/avatar/avatar-2.png"
+      },
+      title:"换个角度在看看小程序的开发和发展",
+      postImage:"/images/post/post-2.jpg",
+      content:"前段时间看完了雨果奖中短篇获奖小说《北京折叠》。很有意思的是，张小龙也要把应用折叠到微信里，这些应用被他成为：小程序...",
+      readingNum:0,
+      collectionNum:0,
+      commentNum:0
+    },
+    {
+      author:{
+        date:"Dec 28 2016",
+        authorImage:"/images/avatar/avatar-4.png"
+      },
+      title:"2017微信公开课Pro",
+      postImage:"/images/post/post-3.jpg",
+      content:"在今天举行的2017微信公开课PRO版上，微信事业群总裁张小龙宣布，微信“小程序”将于1月9日正式上线。",
+      readingNum:0,
+      collectionNum:0,
+      commentNum:0
     }]
 
 module.exports = {
