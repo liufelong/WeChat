@@ -7,6 +7,9 @@ var dataObj = require("../../../data/data.js");
 //使用缓存类
 var DBPost = require('../../../data/DBPost.js').DBPost;
 
+//使用ES6缓存类
+import{DBPost_ES6} from '../../../data/DBPost_ES6.js';
+
 Page({
 
   /**
@@ -26,10 +29,16 @@ Page({
     // })
 
     //使用缓存类
-    var dbPost = new DBPost();
+    // var dbPost = new DBPost();
+    // this.setData({
+    //   postList:dbPost.getAllPostData()
+    // })
+
+    //使用ES6缓存类
+    var dbPost = new DBPost_ES6();
     this.setData({
       postList:dbPost.getAllPostData()
-    })
+    });
   },
 
   /**

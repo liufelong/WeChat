@@ -4,6 +4,7 @@ var DBPost = function(){
   this.storageKeyName = 'postList'
 }
 
+//prototype 构造函数原型链上增加一个对象，对象的属性和方法都被构造函数的实例继承
 DBPost.prototype = {
 
   //获取全量的文章信息
