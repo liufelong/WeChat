@@ -16,6 +16,7 @@ class DBPost_ES6 {
     return res;
   }
 
+  //使用有参数的方法获取文章
   getPostItemById(postId){
     var postData = this.getAllPostData();
     var len = postData.length;
