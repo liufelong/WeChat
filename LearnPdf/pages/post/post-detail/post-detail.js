@@ -1,4 +1,5 @@
 // pages/post/post-detail/post-detail.js
+import{DBPost_ES6} from '../../../data/DBPost_ES6.js';
 Page({
 
     /**
@@ -14,6 +15,13 @@ Page({
     onLoad: function (options) {
         var postId = options.tempid;
         console.log("收到的文章ID是"+postId)
+
+        this.dbPost = new DBPost_ES6(postId);
+        this.postData = this.dbPost.getPostItemById().data;
+        console.log("获取到的文章详情是"+this.postData);
+        this.setData({
+            post:this.postData
+        })
     },
 
     /**
