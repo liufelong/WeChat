@@ -16,8 +16,8 @@ Page({
         var postId = options.tempid;
         console.log("收到的文章ID是"+postId)
 
-        this.dbPost = new DBPost_ES6(postId);
-        this.postData = this.dbPost.getPostItemById().data;
+        this.dbPost = new DBPost_ES6();
+        this.postData = this.dbPost.getPostItemById(postId).data;
         console.log("获取到的文章详情是"+this.postData);
         this.setData({
             post:this.postData

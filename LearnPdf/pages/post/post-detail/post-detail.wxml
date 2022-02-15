@@ -1,5 +1,5 @@
-<!--pages/post/post-detail/post-detail.wxml-->
-<view class="container">
+
+<view class="backView">
   <image class="head-image" src="{{post.postImage}}" ></image>
   <text class="title">{{post.title}}</text>
   <view class="author-date">

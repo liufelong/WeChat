@@ -1,5 +1,5 @@
 /* pages/post/post-detail/post-detail.wxss */
-.container {
+.backView {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -12,7 +12,7 @@
 
 .title {
   font-size: 20px;
-  margin-top: 15rpx;
+  margin: 30rpx;
   letter-spacing: 2px;
   color: #4b556c;
 }
