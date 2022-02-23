@@ -44,8 +44,23 @@ Page({
   onTapToDetail(event){
     var postId = event.currentTarget.dataset.postId;
     console.log("点击了文章"+postId);
+
+    //使用URL传值
+    // wx.navigateTo({
+    //   url: '/pages/post/post-detail/post-detail?tempid='+postId,
+    // })
+    var selectData = event.currentTarget.dataset.postData;
+    console.log('选中的文章标题是：' + selectData.title);
+    //使用eventChannel传值
     wx.navigateTo({
-      url: '/pages/post/post-detail/post-detail?tempid='+postId,
+      url: '/pages/post/post-detail/post-detail',
+      success:res=>{
+        //这里给要打开的页面传值，第一个参数是key 第二个参数是需要传递的数据
+        res.eventChannel.emit('postData',event.currentTarget.dataset.postData);
+      },
+      events:{
+       
+      }
     })
   },
 

@@ -13,16 +13,28 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        var postId = options.tempid;
-        console.log("收到的文章ID是"+postId)
+        //使用URL接收参数
+        // var postId = options.tempid;
+        // console.log("收到的文章ID是"+postId)
 
-        this.dbPost = new DBPost_ES6();
-        this.postData = this.dbPost.getPostItemById(postId).data;
-        console.log("获取到的文章详情是"+this.postData);
-        this.setData({
-            post:this.postData,
-            postId:postId
-        })
+        // this.dbPost = new DBPost_ES6();
+        // this.postData = this.dbPost.getPostItemById(postId).data;
+        // console.log("获取到的文章详情是"+this.postData);
+        // this.setData({
+        //     post:this.postData,
+        //     postId:postId
+        // })
+
+        //使用eventChannel接收参数
+        let eventChannel = this.getOpenerEventChannel();
+        eventChannel.on('postData',(postData)=> {
+            this.postData = postData;
+            this.dbPost = new DBPost_ES6();
+            this.setData({
+                post:postData,
+                postId:postData.postId
+            })
+        });
     },
 
     /**
@@ -85,6 +97,7 @@ Page({
         console.log('点击数量' + newData.collectionNum);
         //重新绑定数据。注意，不要将整个newData全部作为setData的参数
         //应当选择更新部分
+        //更新全部 也有效果
         this.setData({
             'post.collectStatus':newData.collectStatus,
             'post.collectionNum':newData.collectionNum
