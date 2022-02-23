@@ -20,9 +20,8 @@ class DBPost_ES6 {
   getPostItemById(postId){
     var postData = this.getAllPostData();
     var len = postData.length;
-    console.log("获取的文章数量="+len)
+    console.log('获取的文章Id = ' + postId);
     for(var i = 0; i < len; i++){
-      console.log("循环的文章id="+postData[i].postId)
       if(postData[i].postId == postId) {
         return {
           index:i,
@@ -30,6 +29,34 @@ class DBPost_ES6 {
         }
       }
     }
+  }
+
+  collect(postId){
+    return this.updataPostData(postId,1);
+  }
+
+  //更新本地缓存，传入id及操作类型 点赞 收藏 评论
+  updataPostData(postId,stats) {
+    var post = this.getPostItemById(postId);
+    var itemPost = post.data;
+    var allPostData = this.getAllPostData();
+    switch(stats){
+      case 1:
+        //处理收藏
+        if (itemPost.collectStatus) {
+          itemPost.collectStatus = false;
+          itemPost.collectionNum --;
+        }else {
+          itemPost.collectStatus = true;
+          itemPost.collectionNum ++;
+        }
+        break;
+        default:
+          break;
+    }
+    allPostData[itemPost.index] = itemPost;
+    this.execSetStorageSync(allPostData);
+    return itemPost;
   }
 
   execSetStorageSync(data){

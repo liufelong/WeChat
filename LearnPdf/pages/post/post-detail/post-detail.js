@@ -6,7 +6,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        postId:''
     },
 
     /**
@@ -20,7 +20,8 @@ Page({
         this.postData = this.dbPost.getPostItemById(postId).data;
         console.log("获取到的文章详情是"+this.postData);
         this.setData({
-            post:this.postData
+            post:this.postData,
+            postId:postId
         })
     },
 
@@ -77,5 +78,16 @@ Page({
 
     onUpTap: function (){
         
+    },
+    onCollectionTap: function(){
+        console.log('文章id' + this.data.postId);
+        var newData = this.dbPost.collect(this.data.postId);
+        console.log('点击数量' + newData.collectionNum);
+        //重新绑定数据。注意，不要将整个newData全部作为setData的参数
+        //应当选择更新部分
+        this.setData({
+            'post.collectStatus':newData.collectStatus,
+            'post.collectionNum':newData.collectionNum
+        })
     }
 })
