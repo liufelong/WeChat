@@ -88,8 +88,21 @@ Page({
 
     },
 
-    onUpTap: function (){
-        
+    onUpTap: function (e){
+        var postId = e.currentTarget.dataset.postId;
+        console.log('点赞的ID：' + postId);
+        var newData = this.dbPost.upAction(postId);
+        this.setData({
+            'post.upStatus':newData.upStatus,
+            'post.upNum':newData.upNum
+        });
+        this.reloadListData();
+        wx.showToast({
+            title: newData.upStatus ? '点赞成功' : '取消成功',
+            duration: 1000,
+            icon: 'success',
+            mask: true
+        })
     },
     onCollectionTap: function(){
         console.log('文章id' + this.data.postId);
@@ -103,6 +116,12 @@ Page({
             'post.collectionNum':newData.collectionNum
         });
         this.reloadListData();
+        wx.showToast({
+          title: newData.collectStatus ? '收藏成功' : '取消成功',
+          icon: 'success',
+          duration: 1500,
+          mask: true
+        })
     },
     reloadListData: function(){
         const eventChannel = this.getOpenerEventChannel();

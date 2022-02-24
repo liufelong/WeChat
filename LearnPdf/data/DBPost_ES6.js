@@ -30,9 +30,14 @@ class DBPost_ES6 {
       }
     }
   }
-
+  //收藏
   collect(postId){
     return this.updataPostData(postId,'collect');
+  }
+
+  //点赞
+  upAction(postId){
+    return this.updataPostData(postId,'up');
   }
 
   //更新本地缓存，传入id及操作类型 点赞 收藏 评论
@@ -50,6 +55,15 @@ class DBPost_ES6 {
           itemPost.collectStatus = true;
           itemPost.collectionNum ++;
         }
+        break;
+        case 'up':
+          if (itemPost.upStatus) {
+            itemPost.upStatus = false;
+            itemPost.upNum --;
+          }else {
+            itemPost.upStatus = true;
+            itemPost.upNum ++;
+          }
         break;
         default:
           break;
