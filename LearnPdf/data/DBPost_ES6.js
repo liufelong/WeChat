@@ -32,7 +32,7 @@ class DBPost_ES6 {
   }
 
   collect(postId){
-    return this.updataPostData(postId,1);
+    return this.updataPostData(postId,'collect');
   }
 
   //更新本地缓存，传入id及操作类型 点赞 收藏 评论
@@ -41,7 +41,7 @@ class DBPost_ES6 {
     var itemPost = post.data;
     var allPostData = this.getAllPostData();
     switch(stats){
-      case 1:
+      case 'collect':
         //处理收藏
         if (itemPost.collectStatus) {
           itemPost.collectStatus = false;

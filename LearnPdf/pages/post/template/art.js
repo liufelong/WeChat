@@ -52,6 +52,7 @@ Page({
     var selectData = event.currentTarget.dataset.postData;
     console.log('选中的文章标题是：' + selectData.title);
     //使用eventChannel传值
+    let that = this;
     wx.navigateTo({
       url: '/pages/post/post-detail/post-detail',
       success:res=>{
@@ -59,7 +60,14 @@ Page({
         res.eventChannel.emit('postData',event.currentTarget.dataset.postData);
       },
       events:{
-       
+        //反向回调，在这里注册方法
+        reloadItem(e){
+          console.log('详情返回的文章id是：' + e.postId);
+          var dbPost = new DBPost_ES6();
+          that.setData({
+            postList:dbPost.getAllPostData()
+          });
+        }
       }
     })
   },

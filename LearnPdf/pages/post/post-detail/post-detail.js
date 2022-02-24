@@ -101,6 +101,13 @@ Page({
         this.setData({
             'post.collectStatus':newData.collectStatus,
             'post.collectionNum':newData.collectionNum
-        })
+        });
+        this.reloadListData();
+    },
+    reloadListData: function(){
+        const eventChannel = this.getOpenerEventChannel();
+
+        //eventChannel调用在列表页面注册的方法 第一个参数是方法名，第二个参数是传递对象
+        eventChannel.emit('reloadItem',{postId:this.data.postId});
     }
 })
