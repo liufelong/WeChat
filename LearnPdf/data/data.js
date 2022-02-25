@@ -15,8 +15,14 @@ var postList =[
       collectionNum:108,
       collectionStatus:true,
       commentNum:7,
+      comments:[],
       index:0,
-      postId:1
+      postId:1,
+      music:{
+        url:'http://ws.stream.qqmusic.qq.com/C100001Dc80Z3qPj2Z.m4a?fromtag=38',
+        title:'罗大佑 恋曲1980',
+        coverImg:'http://y.gtimg.cn/music/photo_new/T002R150x150M000003cWU1M2qNwxZ.jpg?max_age=2592000'
+      }
     },
     {
       author:{
@@ -34,8 +40,55 @@ var postList =[
       collectionNum:108,
       collectionStatus:false,
       commentNum:7,
+      comments:[
+        {
+          username:'青石',
+          avater:'/images/avatar/avatar-3.png',
+          create_time:'1484723344',
+          content:{
+            txt:'那一年的毕业季，我们挥挥手，来不及说再见，就踏上了远行的火车。',
+            img:['/images/comment/train-1.jpg','/images/comment/train-2.jpg','/images/comment/train-3.jpg'],
+            audio:null
+          }
+        },
+        {
+          username:'水清',
+          avater:'/images/avatar/avatar-2.png',
+          create_time:'1481018319',
+          content:{
+            txt:'夏日的蝉鸣与夜晚的火车，时长会在未来无数的日子里不断的在我耳边响起，难以忘怀。',
+            img:[],
+            audio:null
+          }
+        },
+        {
+          username:'赤墨',
+          avater:'/images/avatar/avatar-1.png',
+          create_time:'1484496000',
+          content:{
+            txt:'时光荏苒，自然的吞噬，让太多的老火车站也消失的无影无踪。',
+            img:['/images/comment/train-4.jpg'],
+            audio:null
+          }
+        },
+        {
+          username:'林白',
+          avater:'/images/avatar/avatar-4.png',
+          create_time:'1484582400',
+          content:{
+            txt:'',
+            img:[],
+            audio:{url:'http://123',timeLen:8}
+          }
+        }
+      ],
       index:1,
-      postId:2
+      postId:2,
+      music:{
+        url:'http://ws.stream.qqmusic.qq.com/C100004VybKS2SpZVL.m4a?fromtag=38',
+        title:'齐秦 原来的我',
+        coverImg:'http://y.gtimg.cn/music/photo_new/T002R150x150M000003ZvAeK2PgA4Y.jpg?max_age=2592000'
+      }
     },
     {
       author:{
@@ -53,8 +106,14 @@ var postList =[
       collectionNum:108,
       collectionStatus:false,
       commentNum:7,
+      comments:[],
       index:2,
-      postId:3
+      postId:3,
+      music:{
+        url:'http://ws.stream.qqmusic.qq.com/C100003XYcCu3IZKLc.m4a?fromtag=38',
+        title:'老狼 虎口脱险',
+        coverImg:'http://y.gtimg.cn/music/photo_new/T002R150x150M000002sNbWp3royJG.jpg?max_age=2592000'
+      }
     },
     {
       author:{
@@ -72,8 +131,14 @@ var postList =[
       collectionNum:0,
       collectionStatus:false,
       commentNum:0,
+      comments:[],
       index:3,
-      postId:4
+      postId:4,
+      music:{
+        url:'http://ws.stream.qqmusic.qq.com/C100003z8cOo0Bs7zP.m4a?fromtag=38',
+        title:'吴奇隆 祝你一路顺风',
+        coverImg:'http://y.gtimg.cn/music/photo_new/T002R150x150M000000n6a7p2HIPqU.jpg?max_age=2592000'
+      }
     },
     {
       author:{
@@ -91,8 +156,14 @@ var postList =[
       collectionNum:0,
       collectionStatus:false,
       commentNum:0,
+      comments:[],
       index:4,
-      postId:5
+      postId:5,
+      music:{
+        url:'http://ws.stream.qqmusic.qq.com/C100004K7D5E2xhv9v.m4a?fromtag=38',
+        title:'杨千嬅 再见二丁目(live)',
+        coverImg:'http://y.gtimg.cn/music/photo_new/T002R150x150M000000ptb8p0ZIxDP.jpg?max_age=2592000'
+      }
     }]
 
 module.exports = {
