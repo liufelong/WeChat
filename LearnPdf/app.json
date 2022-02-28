@@ -4,6 +4,7 @@
     "pages/post/static/art",
     "pages/post/template/art",
     "pages/post/post-detail/post-detail",
+    "pages/post/post-comment/post-comment",
 
     "pages/avatar/index"
   ],

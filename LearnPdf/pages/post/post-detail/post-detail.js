@@ -87,7 +87,7 @@ Page({
     onShareAppMessage: function () {
 
     },
-
+    //点赞
     onUpTap: function (e){
         var postId = e.currentTarget.dataset.postId;
         console.log('点赞的ID：' + postId);
@@ -104,6 +104,15 @@ Page({
             mask: true
         })
     },
+    //评论
+    onCommentTap: function(e){
+        var postId = e.currentTarget.dataset.postId;
+        console.log('点击了评论的id是：' + postId);
+        wx.navigateTo({
+          url: '../post-comment/post-comment?id='+postId,
+        })
+    },
+    //收藏
     onCollectionTap: function(){
         console.log('文章id' + this.data.postId);
         var newData = this.dbPost.collect(this.data.postId);
