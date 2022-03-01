@@ -75,5 +75,17 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  /**
+   * 点击查看评论大图
+   * */ 
+  previewImg:function(event){
+    var commentIdx = event.currentTarget.dataset.commentIdx,
+        imgIdx = event.currentTarget.dataset.imgIdx,
+        imgs = this.data.comments[commentIdx].content.img;
+        wx.previewImage({
+          urls: imgs,//图片地址数组，只能展示网络地址图片，不能展示本地的
+          current:imgs[imgIdx] //当前展示的大图地址
+        })
   }
 })

@@ -23,8 +23,10 @@
           </view>
         </view>
         <view class="comment-img" wx:if="{{item.content.img.length != 0}}">
-          <block wx:for="{{item.content.img}}" wx:for-item="img">
-            <image src="{{img}}" mode="aspectFill"></image>
+          <block wx:for="{{item.content.img}}" wx:for-item="img" wx:for-index="imgIdx">
+            <image src="{{img}}" mode="aspectFill" catchtap="previewImg" 
+            data-comment-idx="{{idx}}"
+            data-img-idx="{{imgIdx}}"></image>
           </block>
         </view>
         <view class="comment-time">{{item.create_time}}</view>

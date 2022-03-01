@@ -47,7 +47,10 @@ var postList =[
           create_time:'1484723344',
           content:{
             txt:'那一年的毕业季，我们挥挥手，来不及说再见，就踏上了远行的火车。',
-            img:['/images/comment/train-1.jpg','/images/comment/train-2.jpg','/images/comment/train-3.jpg'],
+            img:['https://img0.baidu.com/it/u=4113069909,1914950629&fm=253&fmt=auto&app=138&f=JPEG?w=320&h=480',
+            'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fmobile%2F7%2F538eb7c40d5ae.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1648729804&t=138f243aef8bbf6c492ef385bb985191',
+            'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fgame.people.com.cn%2FNMediaFile%2F2015%2F0127%2FMAIN201501270928000369348314213.jpg&refer=http%3A%2F%2Fgame.people.com.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1648729804&t=4050722e4862c4472d89bdc714edfd2d',
+            'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.desktx.com%2Fd%2Ffile%2Fphone%2Ffengjing%2F20160824%2F55a96af48651ed4abf49859b707a9262.jpg&refer=http%3A%2F%2Fwww.desktx.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1648731006&t=cc26ad0c11b2da54ea0bb4a6cac9713a'],
             audio:null
           }
         },
@@ -67,7 +70,7 @@ var postList =[
           create_time:'1484496000',
           content:{
             txt:'时光荏苒，自然的吞噬，让太多的老火车站也消失的无影无踪。',
-            img:['/images/comment/train-4.jpg'],
+            img:['https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.desktx.com%2Fd%2Ffile%2Fphone%2Ffengjing%2F20161208%2Fsmall9705114c1cb1e9017e0a87d8685be319.jpg&refer=http%3A%2F%2Fwww.desktx.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1648729684&t=6f31cd5c5f3848b60ebfed292269e136'],
             audio:null
           }
         },
