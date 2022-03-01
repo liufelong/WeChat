@@ -6,26 +6,24 @@
       <view class="comment-item">
         <view class="comment-item-header">
           <view class="left-img">
-            <image src="{{item.avatar}}"></image>
+            <image src="{{item.avater}}"></image>
           </view>
           <view class="right-user">
             <text class="user-name">{{item.username}}</text>
           </view>
         </view>
         <view class="comment-body">
-          <view class="comment-txt" wx:if="{{item.context.txt}}">
-            <text>{{item.context.txt}}</text>
+          <view class="comment-txt" wx:if="{{item.content.txt}}">
+            <text>{{item.content.txt}}</text>
           </view>
-          <view class="comment-voice" 
-              wx:if="{{item.context.audio && item.context.audio.url}}">
-            <view data-url="{{item.context.audio.url}}" 
-                 class="comment-voice-item" catchtap="playAudio"></view>
-                 <image src="/images/icon/wx_app_voice.png" class="voice-play"></image>
-                 <text>{{item.context.audio.timeLen}}</text>
+          <view class="comment-voice" wx:if="{{item.content.audio && item.content.audio.url}}">
+            <view data-url="{{item.content.audio.url}}" class="comment-voice-item" catchtap="playAudio"></view>
+            <image src="/images/icon/wx_app_voice.png" class="voice-play"></image>
+            <text>{{item.content.audio.timeLen}}</text>
           </view>
         </view>
-        <view class="comment-img" wx:if="{{item.context.img.length!=0}}">
-          <block wx:for="{{item.context.img}}" wx:for-item="img">
+        <view class="comment-img" wx:if="{{item.content.img.length != 0}}">
+          <block wx:for="{{item.content.img}}" wx:for-item="img">
             <image src="{{img}}" mode="aspectFill"></image>
           </block>
         </view>

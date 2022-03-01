@@ -1,0 +1,24 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "评论详情",
+                    "pathName": "pages/post/post-comment/post-comment",
+                    "query": "id=2",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}
