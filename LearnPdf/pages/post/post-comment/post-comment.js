@@ -1,4 +1,7 @@
 // pages/post/post-comment/post-comment.js
+
+import{DBPost_ES6} from "../../../data/DBPost_ES6.js"
+
 Page({
 
   /**
@@ -12,7 +15,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var postId = options.id;
+    console.log('评论详情接收到的id：' + postId);
+    this.dbPost = new DBPost_ES6();
+    var comments = this.dbPost.getCommentData(postId);
+    
+    this.setData({
+      comments:comments
+    });
+    console.log(comments);
   },
 
   /**

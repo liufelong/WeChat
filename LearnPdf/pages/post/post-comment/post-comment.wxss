@@ -1,1 +1,50 @@
 /* pages/post/post-comment/post-comment.wxss */
+.comment-detail-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow-y: hidden;
+}
+
+.comment-main-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 100rpx;
+  right: 0;
+  overflow-y: auto;
+}
+
+.comment-item {
+  margin: 20rpx 0 20rpx 24rpx;
+  padding: 24rpx 24rpx 24rpx 0;
+
+}
+
+.comment-item:last-child{
+  border-bottom: none;
+}
+
+.comment-title {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #212121;
+  border-bottom: 1px solid #cccccc;
+  margin-left: 24rpx;
+  padding: 8rpx 0;
+}
+
+.comment-item-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.comment-item-header .left-img image{
+  height: 80rpx;
+  width: 80rpx;
+}
+
