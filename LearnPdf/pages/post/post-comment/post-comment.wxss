@@ -1,21 +1,21 @@
 /* pages/post/post-comment/post-comment.wxss */
-/* .comment-detail-box {
+.comment-detail-box {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   overflow-y: hidden;
-} */
+}
 
-/* .comment-main-box {
+.comment-main-box {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 100rpx;
   right: 0;
   overflow-y: auto;
-} */
+}
 
 .comment-item {
   margin: 20rpx 0 20rpx 24rpx;
@@ -80,4 +80,16 @@
    margin-top: 10rpx;
    color: #cccccc;
    font-size: 24rpx;
+ }
+
+ /* ******** 输入框样式 ************ */
+ .input-box{
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-color: #EAE8E8;
+   border-top: 1rpx solid #D5D5D5;
+   min-height: 100rpx;
+   z-index: 1000;
  }
