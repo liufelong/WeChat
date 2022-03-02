@@ -47,7 +47,9 @@
                class="keyboard-icon" 
                catchtap="switchInputType"/>
         <input class="speak-input" value="{{keyBoardInputValue}}" 
-               bindinput="bindCommentInput" placeholder="说点什么吧……"/>
+               bindinput="bindCommentInput" 
+               bindconfirm="submitComment"
+               placeholder="说点什么吧……"/>
       </view>
       <image class="add-icon" src="/images/icon/wx_app_add.png"
               catchtap="sendMoreMsg"/>

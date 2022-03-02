@@ -42,6 +42,15 @@ class DBPost_ES6 {
     }
   }
 
+  /**
+   * 保存新的评论到缓存中
+   * postId 文章id
+   * newComment 评论对象
+   * */ 
+  newComment(postId,newComment){
+    this.updataPostData(postId,'comment',newComment);
+  }
+
   //使用有参数的方法获取文章
   getPostItemById(postId){
     var postData = this.getAllPostData();
@@ -67,7 +76,7 @@ class DBPost_ES6 {
   }
 
   //更新本地缓存，传入id及操作类型 点赞 收藏 评论
-  updataPostData(postId,stats) {
+  updataPostData(postId,stats,newCommet) {
     var post = this.getPostItemById(postId);
     var itemPost = post.data;
     var allPostData = this.getAllPostData();
@@ -90,6 +99,10 @@ class DBPost_ES6 {
             itemPost.upStatus = true;
             itemPost.upNum ++;
           }
+        break;
+        case 'comment':
+          itemPost.commentNum++;
+          itemPost.comments.push(newCommet);
         break;
         default:
           break;
