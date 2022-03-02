@@ -33,8 +33,26 @@
       </view>
     </block>
   </view>
+  <!-- 发送框 -->
   <view class="input-box">
-
+    <view class="send-msg-box">
+      <view hidden="{{useKeyBoardFlag}}" class="input-item">
+        <image src="/images/icon/wx_app_keyboard.png" 
+               class="keyboard-icon" 
+               catchtap="switchInputType"/>
+        <input class="speak-input" value="按住 说话" disabled="disabled" catchtouchstart="recordStart" catchtouchend="recordEnd"/>
+      </view>
+      <view hidden="{{!useKeyBoardFlag}}" class="input-item">
+        <image src="/images/icon/wx_app_speak.png" 
+               class="keyboard-icon" 
+               catchtap="switchInputType"/>
+        <input class="speak-input" value="{{keyBoardInputValue}}" 
+               bindinput="bindCommentInput" placeholder="说点什么吧……"/>
+      </view>
+      <image class="add-icon" src="/images/icon/wx_app_add.png"
+              catchtap="sendMoreMsg"/>
+      <view class="submit-btn" catchtap="submitComment">发送</view>
+    </view>
   </view>
 </view>
 
