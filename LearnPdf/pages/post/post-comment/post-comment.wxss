@@ -144,3 +144,28 @@
   color: #ffffff;
   text-align: center;
 }
+/* 发送图片样式 */
+.more-btn-item {
+  display: inline-block;
+  width: 110rpx;
+  height: 140rpx;
+  margin-left: 35rpx;
+  text-align: center;
+}
+
+.more-btn-main {
+  width: 100%;
+  height: 60rpx;
+  text-align: center;
+  border: 1rpx solid #D5D5D5;
+  border-radius: 10rpx;
+  background-color: #fbfbfc;
+  margin: 0 auto;
+  padding: 25rpx 0;
+}
+
+.more-btn-main image{
+  width: 60rpx;
+  height: 60rpx;
+}
+

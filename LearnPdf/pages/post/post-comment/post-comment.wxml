@@ -55,6 +55,36 @@
               catchtap="sendMoreMsg"/>
       <view class="submit-btn" catchtap="submitComment">发送</view>
     </view>
+    <view class="send-more-box" hidden="{{!sendMoreMsgFlag}}">
+      <!-- 选择图片和拍照的按钮 -->
+      <view class="send-more-btns-main">
+        <view class="more-btn-item" catchtap="chooseImage" data-category="album">
+          <view class="more-btn-main">
+            <image src="/images/icon/wx_app_upload_image.png"></image>
+          </view>
+          <text>照片</text>
+        </view>
+        <view class="more-btn-item" catchtap="chooseImage" data-category="camera">
+          <view class="more-btn-main">
+            <image src="/images/icon/wx_app_camera.png"></image>
+          </view>
+          <text>拍照</text>
+        </view>
+      </view>
+      <!-- 显示选中的图片 -->
+      <view class="send-more-result-main" hidden="{{chooseFiles.length == 0}}">
+        <block wx:for="{{chooseFiles}}" wx:for-index="idx">
+          <!-- 如果删除其中一个，就对其添加删除样式 -->
+          <view class="file-box{{deleteIdx == idx?'deleting':''}}">
+            <view class="image-box">
+              <image src="{{item}}" mode="aspectFill"></image>
+              <icon class="remove-icon" type="cancel" size="23" color="#B2B2B2" 
+                    catchtap="deletImage" data-idx='{{idx}}'></icon>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
   </view>
 </view>
 

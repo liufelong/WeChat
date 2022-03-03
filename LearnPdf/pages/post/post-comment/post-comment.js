@@ -10,8 +10,8 @@ Page({
    */
   data: {
     useKeyBoardFlag:true,
-    keyBoardInputValue:''
-
+    keyBoardInputValue:'',
+    sendMoreMsgFlag:true
   },
 
   /**
