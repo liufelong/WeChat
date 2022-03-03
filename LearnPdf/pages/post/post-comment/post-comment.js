@@ -11,7 +11,8 @@ Page({
   data: {
     useKeyBoardFlag:true,
     keyBoardInputValue:'',
-    sendMoreMsgFlag:true
+    sendMoreMsgFlag:false,
+    chooseFiles:[],
   },
 
   /**
@@ -110,6 +111,41 @@ Page({
     //用来屏蔽文字
     return val.replace(/qq/g,'*');
   },
+
+  /**
+   * 点击加号的方法
+   * */
+  sendMoreMsg:function(){
+    this.setData({
+      sendMoreMsgFlag:!this.data.sendMoreMsgFlag
+    });
+  },
+  
+  /**
+   * 选择照片
+   * */ 
+  chooseImage:function(event){
+    var imgArr = this.data.chooseFiles;
+    var leftCount = 3 - imgArr.length;
+    //最多选择三张
+    if (leftCount <= 0 ) {
+      return;
+    }
+    //选择照片类型 是一个数组 
+    var sourceType = [event.currentTarget.dataset.category];
+    var that = this;
+    wx.chooseImage({
+      count: leftCount,
+      sourceType:sourceType,
+      success:function(res){
+        that.setData({
+          chooseFiles:imgArr.concat(res.tempFilePaths)
+        });
+      }
+    })
+
+  },
+
   /**
    * 提交评论
    * */ 

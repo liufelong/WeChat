@@ -169,3 +169,48 @@
   height: 60rpx;
 }
 
+.send-more-result-main{
+  margin-top: 30rpx;
+}
+
+.send-more-result-main image{
+  height: 100%;
+  width: 100%;
+}
+
+.file-box{
+  margin-right: 14rpx;
+  width: 160rpx;
+  height: 160rpx;
+  position: relative;
+  display: inline-block;
+}
+
+.file-box.deleting{
+  animation: deleting 0.5s ease;
+  animation-fill-mode: forwards;
+}
+@keyframes deleting{
+  0%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(0);
+  }
+}
+
+.remove-icon{
+  position: absolute;
+  right: 0rpx;
+  top: 5rpx;
+}
+.img-box{
+  height: 100%;
+  width: 100%;
+}
+.img-box image{
+  margin-left: 15rpx;
+}
+
+
+

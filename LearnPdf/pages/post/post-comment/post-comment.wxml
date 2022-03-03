@@ -75,8 +75,8 @@
       <view class="send-more-result-main" hidden="{{chooseFiles.length == 0}}">
         <block wx:for="{{chooseFiles}}" wx:for-index="idx">
           <!-- 如果删除其中一个，就对其添加删除样式 -->
-          <view class="file-box{{deleteIdx == idx?'deleting':''}}">
-            <view class="image-box">
+          <view class="file-box {{deleteIdx == idx?'deleting':''}}">
+            <view class="img-box">
               <image src="{{item}}" mode="aspectFill"></image>
               <icon class="remove-icon" type="cancel" size="23" color="#B2B2B2" 
                     catchtap="deletImage" data-idx='{{idx}}'></icon>
