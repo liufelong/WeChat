@@ -134,6 +134,13 @@ Page({
     //选择照片类型 是一个数组 
     var sourceType = [event.currentTarget.dataset.category];
     var that = this;
+    /**
+     * count 可选择照片的张数
+     * sourceType: 选择方式 数组类型['album','camera'],
+     *             里面可以有一个也可以有两个
+     * 
+     * tempFilePaths 选中的文件地址
+      */
     wx.chooseImage({
       count: leftCount,
       sourceType:sourceType,
@@ -145,11 +152,24 @@ Page({
     })
 
   },
+  /**
+   * 删除照片
+   * */ 
+  deletImage:function(event){
+    var index = event.currentTarget.dataset.idx,
+        that = this;
+    that.data.chooseFiles.splice(index,1);
+    that.setData({
+      chooseFiles:that.data.chooseFiles
+    });
+  },
 
   /**
    * 提交评论
    * */ 
   submitComment:function(){
+
+    var imgs = this.data.chooseFiles;
 
     var newData = {
       username:'青石',
@@ -158,10 +178,11 @@ Page({
       create_time:new Date().getTime() / 1000,
       content:{
         txt:this.data.keyboardInputValue,
-        }
+        img:imgs
+      }
     };
 
-    if (!newData.content.txt) {
+    if (!newData.content.txt && imgs.length == 0) {
       //评论文字验空
       return
     }
@@ -190,7 +211,9 @@ Page({
    * */ 
   resetAllDefaultStatus:function(){
     this.setData({
-      keyBoardInputValue:''
+      keyBoardInputValue:'',
+      chooseFiles:[],
+      sendMoreMsgFlag:false
     });
   },
 
