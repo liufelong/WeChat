@@ -151,22 +151,33 @@ Page({
             isPlayingMusic:!this.data.isPlayingMusic
         });
        
-        if (this.data.isPlayingMusic) {
-            console.log( this.data.post.music.url);
-            
+        if (this.data.isPlayingMusic) {            
             
             // this.player.play();
             
-            wx.playBackgroundAudio({
-              dataUrl: 'http://www.ytmp3.cn/down/76248.mp3',
-              title:this.data.post.music.title,
-              coverImgUrl:this.data.post.music.coverImg
-            })
+            // 这个方法已经废弃
+            // wx.playBackgroundAudio({
+            //   dataUrl: 'http://www.ytmp3.cn/down/76248.mp3',
+            //   title:this.data.post.music.title,
+            //   coverImgUrl:this.data.post.music.coverImg
+            // })
         } else {
-            wx.pauseBackgroundAudio({
-              success: (res) => {},
-            })
+            // 这个方法已经废弃
+            // wx.pauseBackgroundAudio({
+            //   success: (res) => {},
+            // })
             // this.player.stop();
+        }
+
+        //使用新的方法
+        const bgMusic = wx.getBackgroundAudioManager();
+        if (this.data.isPlayingMusic) {
+           
+            bgMusic.title = '当你老了'
+            bgMusic.src = 'http://www.ytmp3.cn/down/76248.mp3'
+            bgMusic.play();
+        } else {
+            bgMusic.pause();
         }
     }
 })
