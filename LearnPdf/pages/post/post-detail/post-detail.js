@@ -6,13 +6,21 @@ Page({
      * 页面的初始数据
      */
     data: {
-        postId:''
+        postId:'',
+        isPlayingMusic:false
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        // var player = wx.createInnerAudioContext();
+        // player.src = 'http://www.ytmp3.cn/down/76248.mp3';
+        // player.onError(function(res) {
+        //     console.log(res.errMsg);
+        // })
+        // this.player = player;
+
         //使用URL接收参数
         // var postId = options.tempid;
         // console.log("收到的文章ID是"+postId)
@@ -137,5 +145,28 @@ Page({
 
         //eventChannel调用在列表页面注册的方法 第一个参数是方法名，第二个参数是传递对象
         eventChannel.emit('reloadItem',{postId:this.data.postId});
+    },
+    onMusicTap: function(){
+        this.setData({
+            isPlayingMusic:!this.data.isPlayingMusic
+        });
+       
+        if (this.data.isPlayingMusic) {
+            console.log( this.data.post.music.url);
+            
+            
+            // this.player.play();
+            
+            wx.playBackgroundAudio({
+              dataUrl: 'http://www.ytmp3.cn/down/76248.mp3',
+              title:this.data.post.music.title,
+              coverImgUrl:this.data.post.music.coverImg
+            })
+        } else {
+            wx.pauseBackgroundAudio({
+              success: (res) => {},
+            })
+            // this.player.stop();
+        }
     }
 })
