@@ -93,7 +93,11 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
-
+        return {
+            title:this.data.post.title,
+            // desc:this.data.post.content,
+            // path:
+        }
     },
     //点赞
     onUpTap: function (e){

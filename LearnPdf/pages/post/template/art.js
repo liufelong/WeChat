@@ -119,5 +119,26 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  swiperOnClick:function(event) {
+    var postId = event.target.dataset.postId;
+    console.log('图片id是：' + postId);
+    var dbPost = new DBPost_ES6();
+    var post = dbPost.getPostItemById(postId).data;
+    var that = this;
+    wx.navigateTo({
+      url: '/pages/post/post-detail/post-detail',
+      success:res=>{
+        res.eventChannel.emit('postData',post);
+      },
+      events:{
+        reloadItem(e){
+          that.setData({
+            postList:dbPost.getAllPostData()
+          })
+        }
+      }
+    })
   }
 })
