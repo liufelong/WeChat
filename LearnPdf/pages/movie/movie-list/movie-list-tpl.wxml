@@ -1,0 +1,19 @@
+<import src="../singe-movie/movie-tpl"/>
+<template name="movieListTpl">
+  <view class="move-list-container">
+    <view class="inner-container">
+      <view class="movie-head">
+        <text class="slogan">{{categoryTitle}}</text>
+        <view class="more" catchtap="onMoreTap" data-category="{{categoryTitle}}">
+           <text class="more-text">更多</text>
+           <import class="more-img" src="/images/icon/wx_app_arrow_right.png"/>
+        </view>
+      </view>
+      <view class="movies-container">
+        <block wx:for="{{movies}}" wx:for-item="movie">
+            <template is="movieTpl" data="{{...movie}}"/>
+        </block>
+      </view>
+    </view>
+  </view>
+</template>

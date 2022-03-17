@@ -1,4 +1,4 @@
-// pages/avatar/index.js
+// pages/movie/movie.js
 Page({
 
   /**

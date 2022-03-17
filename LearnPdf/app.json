@@ -6,7 +6,7 @@
     "pages/post/post-detail/post-detail",
     "pages/post/post-comment/post-comment",
 
-    "pages/avatar/index"
+    "pages/movie/movie"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -17,13 +17,13 @@
   "tabBar": {
     "list": [{
       "pagePath": "pages/post/index",
-      "text": "静态",
+      "text": "文章",
       "iconPath": "/images/tabbar/a-off.png",
       "selectedIconPath": "/images/tabbar/a-on.png"
     },
     {
-      "pagePath": "pages/avatar/index",
-      "text": "其他",
+      "pagePath": "pages/movie/movie",
+      "text": "电影",
       "iconPath": "/images/tabbar/b-off.png",
       "selectedIconPath": "/images/tabbar/b-on.png"
     }]

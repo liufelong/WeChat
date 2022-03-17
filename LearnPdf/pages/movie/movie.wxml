@@ -1,0 +1,4 @@
+<!--pages/movie/movie.wxml-->
+<import src="../movie/movie-list/movie-list-tpl"/>
+
+
