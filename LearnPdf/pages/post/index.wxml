@@ -3,7 +3,8 @@
   <navigator url="/pages/post/static/art">
     静态页面
   </navigator>
-  <navigator url="/pages/post/template/art">
+  <navigator url="/pages/post/template/art" >
     模板使用页面
+  
   </navigator>
 </view>
