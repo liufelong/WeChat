@@ -1,5 +1,9 @@
 package servlet;
 
+import com.google.gson.Gson;
+import javaClass.JsonTool;
+import javaClass.ListClass;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,11 +15,14 @@ import java.io.PrintWriter;
 @WebServlet(name = "ListServlet",urlPatterns = "/list")
 public class ListServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String jsonString = JsonRequst.requstInputToJsonString(request);
+        String jsonString = JsonTool.requstInputToJsonString(request);
+        System.out.println("收到了POST请求");
+        Gson gson = new Gson();
+        ListClass listClass = gson.fromJson(jsonString,ListClass.class);
 
         response.setContentType("text/html;charset=utf-8");
         PrintWriter writer = response.getWriter();
-        writer.println(jsonString);
+        writer.println(listClass.getAllList());
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -6,7 +6,7 @@
         <text class="slogan">{{categoryTitle}}</text>
         <view class="more" catchtap="onMoreTap" data-category="{{categoryTitle}}">
            <text class="more-text">更多</text>
-           <import class="more-img" src="/images/icon/wx_app_arrow_right.png"/>
+           <image class="more-img" src="/images/icon/wx_app_arrow_right.png"/>
         </view>
       </view>
       <view class="movies-container">

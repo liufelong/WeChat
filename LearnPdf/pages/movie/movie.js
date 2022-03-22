@@ -1,4 +1,5 @@
 // pages/movie/movie.js
+var app = getApp();
 Page({
 
   /**
@@ -12,7 +13,45 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var url = app.globalData.baseUrl + "list"
 
+    this.getMovieList();
+  },
+
+  getMovieList:function(){
+    var that = this;
+    
+    wx.request({
+      url: "http://127.0.0.1:8080/list",
+      method:"POST",
+      header:{
+        "content-type":"application/json"
+      },
+      data:{
+        "listType":"hostMovie"
+      },
+      success:function(res){
+        console.log("请求成功");
+        console.log(res.data)
+        that.setData({
+          "inTheaters":{
+            "categoryTitle":"正在热映",
+            "movies":res.data.inTheaters
+          },
+          "commingSoon":{
+            "categoryTitle":"即将上映",
+            "movies":res.data.commingSoon
+          },
+          "top250":{
+            "categoryTitle":"top250",
+            "movies":res.data.top250
+          }
+        });
+      },
+      fail:function(error){
+        console.log(error);
+      }
+    })
   },
 
   /**
