@@ -36,5 +36,7 @@
         <jarDirectory url="file://$MODULE_DIR$/web/WEB-INF/lib" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="json-lib-2.4-jdk13" level="project" />
+    <orderEntry type="library" name="commons-beanutils-1.9.4" level="project" />
   </component>
 </module>

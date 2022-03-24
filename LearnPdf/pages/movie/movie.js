@@ -33,27 +33,33 @@ Page({
       success:function(res){
         console.log("请求成功");
         console.log(res.data)
-        that.setData({
-          "inTheaters":{
-            "categoryTitle":"正在热映",
-            "movies":res.data.inTheaters
-          },
-          "commingSoon":{
-            "categoryTitle":"即将上映",
-            "movies":res.data.commingSoon
-          },
-          "top250":{
-            "categoryTitle":"top250",
-            "movies":res.data.top250
-          }
-        });
+        var arr = res.data;
+        that.createShowData(res.data);
       },
       fail:function(error){
         console.log(error);
       }
     })
   },
-
+  createShowData:function(movies){
+    var hot = movies[0];
+    var other = movies[1];
+    
+    this.setData({
+      "inTheaters":{
+        "categoryTitle":"正在热映",
+        "movies":hot
+      },
+      "commingSoon":{
+        "categoryTitle":"即将上映",
+        "movies":other
+      },
+      "top250":{
+        "categoryTitle":"top250",
+        "movies":other
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

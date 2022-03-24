@@ -1,10 +1,9 @@
 package javaClass;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
+import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
 import java.io.*;
 import java.lang.reflect.Array;
@@ -45,36 +44,29 @@ public class ListClass {
             e.printStackTrace();
         }
 
-        //Json的解析类对象
-        JsonParser parser = new JsonParser();
-        //将JSON的String 转成一个JsonArray对象
-        JsonArray jsonArray = parser.parse(jsonString).getAsJsonArray();
-
-        System.out.println(jsonArray);
-
-        Gson gson = new Gson();
 //        ArrayList<MovieModel> movieArr = new ArrayList<MovieModel>();
-
-        ArrayList<MovieModel> movieArr = gson.fromJson(jsonString,new TypeToken<MovieModel>(){}.getType());
-        //加强for循环遍历JsonArray
-//        for (JsonElement e : jsonArray) {
-//            //使用GSON，直接转成Bean对象
-//            MovieModel movieModel = gson.fromJson(e, MovieModel.class);
+//
+//        JSONArray jsonArray = JSONArray.fromObject(jsonString);
+//        //加强for循环遍历JsonArray
+//        for (int i = 0; i < jsonArray.size(); i++) {
+//            JSONObject  jsonObject = (JSONObject) jsonArray.get(i);
+//            MovieModel movieModel = (MovieModel) JSONObject.toBean(jsonObject,MovieModel.class);
 //            movieArr.add(movieModel);
 //        }
-
-        MovieClass movieClass = new MovieClass();
-        for (int i = 0; i < movieArr.size(); i++) {
-            MovieModel movieModel = movieArr.get(i);
-            if (i < 3){
-                movieClass.inTheaters.add(movieModel);
-            }else {
-                movieClass.commingSoon.add(movieModel);
-                movieClass.top250.add(movieModel);
-            }
-        }
-        String json = gson.toJson(movieClass);
-        return json;
+//
+//        MovieClass movieClass = new MovieClass();
+//        for (int i = 0; i < movieArr.size(); i++) {
+//            MovieModel movieModel = movieArr.get(i);
+//            if (i < 3){
+//                movieClass.inTheaters.add(movieModel);
+//            }else {
+//                movieClass.commingSoon.add(movieModel);
+//                movieClass.top250.add(movieModel);
+//            }
+//        }
+//        Gson gson = new Gson();
+//        String json = gson.toJson(movieClass);
+        return jsonString;
     }
 
     public class MovieClass{

@@ -1,13 +1,23 @@
 package javaClass;
 
 import java.lang.reflect.Array;
+import java.util.List;
 
 public class MovieModel {
     private String id;
     private String title;
     private String coverageUrl;
     private String average;
-    private Array stars;
+    private List<Integer> stars;
+
+    public MovieModel(String id, String title, String coverageUrl, String average, List<Integer> stars) {
+        this.id = id;
+        this.title = title;
+        this.coverageUrl = coverageUrl;
+        this.average = average;
+        this.stars = stars;
+    }
+
 
     public String getId() {
         return id;
@@ -41,11 +51,11 @@ public class MovieModel {
         this.average = average;
     }
 
-    public Array getStars() {
+    public List<Integer> getStars() {
         return stars;
     }
 
-    public void setStars(Array stars) {
+    public void setStars(List<Integer> stars) {
         this.stars = stars;
     }
 }
