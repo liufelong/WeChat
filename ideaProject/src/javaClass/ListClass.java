@@ -21,7 +21,7 @@ public class ListClass {
         this.listType = listType;
     }
 
-    public String getAllList(){
+    public String homeData(){
         String path = "/Users/liufeilong/Desktop/WeChatProjects/WeChat/ideaProject/resouce/hostMovie.json";
         File file = new File(path);
         String jsonString = "";
@@ -66,6 +66,32 @@ public class ListClass {
 //        }
 //        Gson gson = new Gson();
 //        String json = gson.toJson(movieClass);
+        return jsonString;
+    }
+
+    public String getAllList(){
+        String path = "/Users/liufeilong/Desktop/WeChatProjects/WeChat/ideaProject/resouce/allMovies.json";
+        File file = new File(path);
+        String jsonString = "";
+        FileInputStream fileInputStream = null;
+        InputStreamReader inputStreamReader = null;
+        BufferedReader bufferedReader = null;
+
+        try {
+            fileInputStream = new FileInputStream(file);
+            inputStreamReader = new InputStreamReader(fileInputStream,"utf-8");
+            bufferedReader = new BufferedReader(inputStreamReader);
+            String line = null;
+            while ((line = bufferedReader.readLine()) != null){
+                jsonString += line;
+            }
+        } catch (FileNotFoundException | UnsupportedEncodingException e) {
+            e.printStackTrace();
+            return null;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         return jsonString;
     }
 

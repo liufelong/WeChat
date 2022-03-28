@@ -1,11 +1,11 @@
 [
 	[
 		{
-		"movieId":"1",
-		"coverageUrl":"https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2868425292.webp",
-		"title":"新蝙蝠侠",
-		"average":"7.7",
-		"stars":[1,1,1,1,0]
+			"movieId":"1",
+			"coverageUrl":"https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2868425292.webp",
+			"title":"新蝙蝠侠",
+			"average":"7.7",
+			"stars":[1,1,1,1,0]
 		},
 		{
 			"movieId":"2",
@@ -23,11 +23,11 @@
 		}],
 	[
 		{
-		"movieId":"4",
-		"coverageUrl":"https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2846021991.webp",
-		"title":"长津湖之水门桥",
-		"average":"7.2",
-		"stars":[1,1,1,0.5,0]
+			"movieId":"4",
+			"coverageUrl":"https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2846021991.webp",
+			"title":"长津湖之水门桥",
+			"average":"7.2",
+			"stars":[1,1,1,0.5,0]
 		},
 		{
 			"movieId":"5",
