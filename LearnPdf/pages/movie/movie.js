@@ -1,5 +1,6 @@
 // pages/movie/movie.js
 var app = getApp();
+var util = require('../../util/util.js');
 Page({
 
   /**
@@ -20,26 +21,28 @@ Page({
 
   getMovieList:function(){
     var that = this;
-    
-    wx.request({
-      url: "http://127.0.0.1:8080/list",
-      method:"POST",
-      header:{
-        "content-type":"application/json"
-      },
-      data:{
-        "listType":"hostMovie"
-      },
-      success:function(res){
-        console.log("请求成功");
-        console.log(res.data)
-        var arr = res.data;
-        that.createShowData(res.data);
-      },
-      fail:function(error){
-        console.log(error);
-      }
-    })
+    var data = {"listType":"hostMovie"};
+    util.httpPostRequest("list",data,this.createShowData);
+
+    // wx.request({
+    //   url: "http://127.0.0.1:8080/list",
+    //   method:"POST",
+    //   header:{
+    //     "content-type":"application/json"
+    //   },
+    //   data:{
+    //     "listType":"hostMovie"
+    //   },
+    //   success:function(res){
+    //     console.log("请求成功");
+    //     console.log(res.data)
+    //     var arr = res.data;
+    //     that.createShowData(res.data);
+    //   },
+    //   fail:function(error){
+    //     console.log(error);
+    //   }
+    // })
   },
   createShowData:function(movies){
     var hot = movies[0];

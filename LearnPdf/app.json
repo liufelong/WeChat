@@ -6,7 +6,8 @@
     "pages/post/post-detail/post-detail",
     "pages/post/post-comment/post-comment",
 
-    "pages/movie/movie"
+    "pages/movie/movie",
+    "pages/movie/movie-more/movie-more"
   ],
   "window": {
     "backgroundTextStyle": "light",

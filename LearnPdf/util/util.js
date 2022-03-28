@@ -86,6 +86,25 @@ function getDiffTime(recordTime,yearsFlag){
   }
 }
 
+function httpPostRequest(url,data,callBack){
+  url = "http://127.0.0.1:8080/" + url;
+  wx.request({
+    url: url,
+    data:data,
+    method:"POST",
+    header:{
+      "content-type":"application/json"
+    },
+    success:function(res){
+      callBack(res.data);
+    },
+    fail:function(error){
+      console.log(error);
+    }
+  })
+}
+
 module.exports = {
-  getDiffTime:getDiffTime
+  getDiffTime:getDiffTime,
+  httpPostRequest:httpPostRequest
 }
