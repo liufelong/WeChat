@@ -1,4 +1,5 @@
 // pages/movie/movie-more/movie-more.js
+var util = require('../../../util/util.js');
 Page({
 
   /**
@@ -12,14 +13,43 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var catergroy = options.catergory;
+    var listType = "";
+    switch (catergroy) {
+      case "正在热映":
+        listType = "hostMovie"
+        break;
+      case "即将上映":
+        listType = "commingSoon"
+        break;
+      case "top250":
+        listType = "top250"
+        break;
+      default:
+        break;
+    }
+    this.setData({
+      title:catergroy
+    });
+    this.requestData(listType);
   },
-
+  requestData: function(listType){
+    var data = {"listType":listType};
+    util.httpPostRequest("more",data,this.createShowData);
+  },
+  createShowData:function (movies){
+    this.setData({
+      movies:movies
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    var that = this;
+    wx.setNavigationBarTitle({
+      title: that.data.title,
+    })
   },
 
   /**

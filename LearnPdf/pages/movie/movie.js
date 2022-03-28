@@ -22,6 +22,7 @@ Page({
   getMovieList:function(){
     var that = this;
     var data = {"listType":"hostMovie"};
+    //将网络请求方法进行剥离
     util.httpPostRequest("list",data,this.createShowData);
 
     // wx.request({
@@ -63,6 +64,16 @@ Page({
       }
     });
   },
+
+  //点击了更多
+  onMoreTap:function(event){
+    var catergory = event.currentTarget.dataset.category;
+    console.log(catergory);
+    wx.navigateTo({
+      url: 'movie-more/movie-more?catergory=' + catergory,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
