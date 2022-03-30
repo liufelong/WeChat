@@ -3,7 +3,7 @@
 <!-- 顶部用户信息 -->
   <view class="category-item-personal-info">
     <view class="user-avatar">
-      <import src="{{userInfo.avatarUrl}}"></import>
+      <image src="{{userInfo.avatarUrl}}"></image>
     </view>
 
     <view class="user-name">

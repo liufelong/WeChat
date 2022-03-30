@@ -9,7 +9,9 @@
   min-height: 100vh;
 }
 .category-item-personal-info {
+  background-color: white;
   height: 130rpx;
+  width: 100%;
   display: flex;
   padding: 20rpx 0;
 }
