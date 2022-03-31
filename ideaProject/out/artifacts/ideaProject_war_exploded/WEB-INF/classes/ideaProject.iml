@@ -38,5 +38,24 @@
     </orderEntry>
     <orderEntry type="library" name="json-lib-2.4-jdk13" level="project" />
     <orderEntry type="library" name="commons-beanutils-1.9.4" level="project" />
+    <orderEntry type="library" name="ideaProject" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/Program Files/apache-tomcat-9.0.31/lib/jsp-api.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/Program Files/apache-tomcat-9.0.31/lib/servlet-api.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
