@@ -22,7 +22,8 @@ public class ListClass {
     }
 
     public String homeData(){
-        String path = "/Users/liufeilong/Desktop/WeChatProjects/WeChat/ideaProject/resouce/hostMovie.json";
+//        String path = "/Users/liufeilong/Desktop/WeChatProjects/WeChat/ideaProject/resouce/hostMovie.json";
+        String path = "F:/WeChatProjects/GItHub/WeChat/ideaProject/resouce/hostMovie.json";
         File file = new File(path);
         String jsonString = "";
         FileInputStream fileInputStream = null;
@@ -70,7 +71,8 @@ public class ListClass {
     }
 
     public String getAllList(){
-        String path = "/Users/liufeilong/Desktop/WeChatProjects/WeChat/ideaProject/resouce/allMovies.json";
+//        String path = "/Users/liufeilong/Desktop/WeChatProjects/WeChat/ideaProject/resouce/allMovies.json";
+        String path = "F:/WeChatProjects/GItHub/WeChat/ideaProject/resouce/allMovies.json";
         File file = new File(path);
         String jsonString = "";
         FileInputStream fileInputStream = null;
